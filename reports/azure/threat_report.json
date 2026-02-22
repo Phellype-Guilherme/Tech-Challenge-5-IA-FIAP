@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-02-22 20:54:49",
+  "components_detected": [
+    "user",
+    "idp_auth",
+    "api_gateway",
+    "app_server",
+    "external_system"
+  ],
+  "items": [
+    {
+      "component": "user",
+      "stride": [
+        "Spoofing",
+        "Repudiation"
+      ],
+      "common_vulnerabilities": [
+        "Phishing / credenciais vazadas",
+        "Sessão sequestrada",
+        "Requisições sem não-repúdio"
+      ],
+      "countermeasures": "MFA, OAuth/OIDC, device trust, logs e trilha de auditoria com carimbo de tempo."
+    },
+    {
+      "component": "idp_auth",
+      "stride": [
+        "Spoofing",
+        "Tampering"
+      ],
+      "common_vulnerabilities": [
+        "Tokens mal configurados",
+        "SSO sem validação adequada"
+      ],
+      "countermeasures": "OIDC correto, validação de issuer/audience, rotação de chaves, MFA, Conditional Access."
+    },
+    {
+      "component": "api_gateway",
+      "stride": [
+        "Tampering",
+        "Denial of Service",
+        "Information Disclosure"
+      ],
+      "common_vulnerabilities": [
+        "BOLA/Broken Access Control",
+        "Rate limiting ausente",
+        "Exposição de endpoints admin"
+      ],
+      "countermeasures": "WAF/API Gateway policies, authz (RBAC/ABAC), rate limiting, schema validation, mTLS."
+    },
+    {
+      "component": "app_server",
+      "stride": [
+        "Elevation of Privilege",
+        "Tampering",
+        "Repudiation"
+      ],
+      "common_vulnerabilities": [
+        "RCE por dependências",
+        "Config secreta exposta",
+        "Logs insuficientes"
+      ],
+      "countermeasures": "Hardening, secrets manager, SAST/DAST, patching, least privilege, audit logging."
+    },
+    {
+      "component": "external_system",
+      "stride": [
+        "Spoofing",
+        "Tampering",
+        "Information Disclosure"
+      ],
+      "common_vulnerabilities": [
+        "Integração sem assinatura",
+        "Webhooks sem validação",
+        "Dados sensíveis expostos"
+      ],
+      "countermeasures": "mTLS, assinatura HMAC, allowlist, validação de payload, contratos e SLAs."
+    }
+  ]
+}

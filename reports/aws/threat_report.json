@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-02-22 20:43:12",
+  "components_detected": [
+    "user",
+    "cdn",
+    "waf",
+    "load_balancer",
+    "app_server",
+    "database",
+    "observability",
+    "external_system"
+  ],
+  "items": [
+    {
+      "component": "user",
+      "stride": [
+        "Spoofing",
+        "Repudiation"
+      ],
+      "common_vulnerabilities": [
+        "Phishing / credenciais vazadas",
+        "Sessão sequestrada",
+        "Requisições sem não-repúdio"
+      ],
+      "countermeasures": "MFA, OAuth/OIDC, device trust, logs e trilha de auditoria com carimbo de tempo."
+    },
+    {
+      "component": "cdn",
+      "stride": [
+        "Information Disclosure",
+        "Denial of Service"
+      ],
+      "common_vulnerabilities": [
+        "Cache poisoning",
+        "TLS downgrade",
+        "Config incorreta de cache"
+      ],
+      "countermeasures": "Headers corretos, cache key hardening, TLS moderno, rate limiting e shielding."
+    },
+    {
+      "component": "waf",
+      "stride": [
+        "Denial of Service",
+        "Tampering"
+      ],
+      "common_vulnerabilities": [
+        "Regras fracas/inexistentes",
+        "Bypass por payloads"
+      ],
+      "countermeasures": "Regras OWASP CRS, tuning de regras, proteção DDoS, bot protection."
+    },
+    {
+      "component": "load_balancer",
+      "stride": [
+        "Denial of Service",
+        "Tampering"
+      ],
+      "common_vulnerabilities": [
+        "DDoS",
+        "TLS fraco / ciphers inseguras",
+        "Falta de health-check"
+      ],
+      "countermeasures": "Proteção DDoS, TLS modernizado, health checks, autoscaling, circuit breaker."
+    },
+    {
+      "component": "app_server",
+      "stride": [
+        "Elevation of Privilege",
+        "Tampering",
+        "Repudiation"
+      ],
+      "common_vulnerabilities": [
+        "RCE por dependências",
+        "Config secreta exposta",
+        "Logs insuficientes"
+      ],
+      "countermeasures": "Hardening, secrets manager, SAST/DAST, patching, least privilege, audit logging."
+    },
+    {
+      "component": "database",
+      "stride": [
+        "Information Disclosure",
+        "Tampering",
+        "Denial of Service"
+      ],
+      "common_vulnerabilities": [
+        "SQLi",
+        "Dump não criptografado",
+        "Privilégios excessivos"
+      ],
+      "countermeasures": "Criptografia, RBAC, network segmentation, backups, WAF, prepared statements."
+    },
+    {
+      "component": "observability",
+      "stride": [
+        "Repudiation",
+        "Information Disclosure"
+      ],
+      "common_vulnerabilities": [
+        "Logs com PII",
+        "Ausência de trilha de auditoria"
+      ],
+      "countermeasures": "Mascaramento/Redação de PII, acesso restrito aos logs, retenção e integridade (WORM)."
+    },
+    {
+      "component": "external_system",
+      "stride": [
+        "Spoofing",
+        "Tampering",
+        "Information Disclosure"
+      ],
+      "common_vulnerabilities": [
+        "Integração sem assinatura",
+        "Webhooks sem validação",
+        "Dados sensíveis expostos"
+      ],
+      "countermeasures": "mTLS, assinatura HMAC, allowlist, validação de payload, contratos e SLAs."
+    }
+  ]
+}

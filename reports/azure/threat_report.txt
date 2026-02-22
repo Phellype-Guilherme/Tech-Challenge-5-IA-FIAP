@@ -1,0 +1,51 @@
+RELATÓRIO DE MODELAGEM DE AMEAÇAS (STRIDE)
+Gerado em: 2026-02-22 20:54:49
+
+Componentes detectados: user, idp_auth, api_gateway, app_server, external_system
+
+Componente: user
+ - Ameaça (STRIDE): Spoofing
+ - Ameaça (STRIDE): Repudiation
+ - Vulnerabilidades comuns:
+   • Phishing / credenciais vazadas
+   • Sessão sequestrada
+   • Requisições sem não-repúdio
+ - Contramedidas: MFA, OAuth/OIDC, device trust, logs e trilha de auditoria com carimbo de tempo.
+
+Componente: idp_auth
+ - Ameaça (STRIDE): Spoofing
+ - Ameaça (STRIDE): Tampering
+ - Vulnerabilidades comuns:
+   • Tokens mal configurados
+   • SSO sem validação adequada
+ - Contramedidas: OIDC correto, validação de issuer/audience, rotação de chaves, MFA, Conditional Access.
+
+Componente: api_gateway
+ - Ameaça (STRIDE): Tampering
+ - Ameaça (STRIDE): Denial of Service
+ - Ameaça (STRIDE): Information Disclosure
+ - Vulnerabilidades comuns:
+   • BOLA/Broken Access Control
+   • Rate limiting ausente
+   • Exposição de endpoints admin
+ - Contramedidas: WAF/API Gateway policies, authz (RBAC/ABAC), rate limiting, schema validation, mTLS.
+
+Componente: app_server
+ - Ameaça (STRIDE): Elevation of Privilege
+ - Ameaça (STRIDE): Tampering
+ - Ameaça (STRIDE): Repudiation
+ - Vulnerabilidades comuns:
+   • RCE por dependências
+   • Config secreta exposta
+   • Logs insuficientes
+ - Contramedidas: Hardening, secrets manager, SAST/DAST, patching, least privilege, audit logging.
+
+Componente: external_system
+ - Ameaça (STRIDE): Spoofing
+ - Ameaça (STRIDE): Tampering
+ - Ameaça (STRIDE): Information Disclosure
+ - Vulnerabilidades comuns:
+   • Integração sem assinatura
+   • Webhooks sem validação
+   • Dados sensíveis expostos
+ - Contramedidas: mTLS, assinatura HMAC, allowlist, validação de payload, contratos e SLAs.
