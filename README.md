@@ -30,7 +30,6 @@ Tech-Challenge-5-IA-FIAP/
 │   │   ├── arch1.png
 │   │   └── arch2.png
 │   │
-│   ├── labeled/
 │   │
 │   └── test/
 │       ├── arch1.png
