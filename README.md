@@ -26,20 +26,34 @@ A solução demonstra como a IA pode auxiliar arquitetos e desenvolvedores na id
 Tech-Challenge-5-IA-FIAP/
 │
 ├── data/
+│   ├── raw/
+│   │   ├── arch1.png
+│   │   └── arch2.png
+│   │
+│   ├── labeled/
+│   │
+│   └── test/
+│       ├── arch1.png
+│       └── arch2.png
 │
 ├── model/
 │   └── yolov8_custom.pt
 │
 ├── reports/
 │   ├── aws/
-│   │   ├── threat_report.txt
-│   │   └── threat_report.json
-│   │
 │   └── azure/
-│       ├── threat_report.txt
-│       └── threat_report.json
 │
 ├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── diagram_extractor.py
+│   ├── yolo_detector.py
+│   ├── stride_mapper.py
+│   ├── vuln_kb.py
+│   ├── report_generator.py
+│   └── utils/
+│       ├── __init__.py
+│       └── image_hash.py
 │
 ├── requirements.txt
 │
